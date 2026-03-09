@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Auditor</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+
+<div id="scrollBar"></div>
+<header>
+  <div>
+    <h1>Inventory Auditor</h1>
+    <p>OOP · Closures · Async · Map/Set · Reduce · Event Delegation · Generics</p>
+  </div>
+  <div class="header-right">
+    <span id="auditCount">Renders: 0</span>
+    <button class="btn" id="exportBtn">Export JSON</button>
+  </div>
+</header>
+
+<div class="container">
+  <section>
+    <div class="section-title">
+      Stats
+      <span class="section-tag">reduce · some · every</span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Inventory Value</div>
+        <div class="stat-value" id="statValue">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Revenue</div>
+        <div class="stat-value" id="statRevenue">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Units Sold</div>
+        <div class="stat-value" id="statSold">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Low Stock Items</div>
+        <div class="stat-value" id="statLow">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Top Seller</div>
+        <div class="stat-value" style="font-size:1.1rem;margin-top:8px" id="statTop">—</div>
+      </div>
+    </div>
+    <div class="stat-alert" id="statAlert"></div>
+  </section>
+  <section>
+    <div class="section-title">
+      Products
+      <span class="section-tag">async · event delegation · debounce</span>
+    </div>
+
+    <div class="toolbar">
+      <input id="searchInput" type="text" placeholder="Search products..."/>
+      <div id="categoryTabs"></div>
+    </div>
+
+    <p id="loadingMsg">⏳ Loading products...</p>
+    <div id="productGrid"></div>
+  </section>
+  <section>
+    <div class="section-title">
+      Audit Results
+      <span class="section-tag">abstract class · GenericTable · type guards</span>
+    </div>
+    <div class="audit-grid" id="auditResults"></div>
+  </section>
+
+</div>
+<div id="editModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Edit Product</div>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <form id="editForm">
+      <input type="hidden" id="editId"/>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="editName"/>
+      </div>
+      <div class="field">
+        <label>Price ($)</label>
+        <input type="number" id="editPrice" min="0"/>
+      </div>
+      <div class="field">
+        <label>Stock</label>
+        <input type="number" id="editStock" min="0"/>
+      </div>
+      <button type="submit" class="btn" style="width:100%">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
