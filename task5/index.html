@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Form Validator</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Task Validator</h1>
+    <p>DOM · event delegation · debounce · throttle · localStorage</p>
+  </header>
+
+  <div class="form-card">
+    <form id="taskForm">
+      <div class="field">
+        <label for="taskName">Task Name</label>
+        <input id="taskName" type="text" placeholder="e.g. Fix login bug" autocomplete="off"/>
+        <div class="hint" id="nameHint"></div>
+      </div>
+      <div class="field">
+        <label for="taskEmail">Assigned To (email)</label>
+        <input id="taskEmail" type="text" placeholder="user@example.com" autocomplete="off"/>
+        <div class="hint" id="emailHint"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="taskPriority">Priority</label>
+          <select id="taskPriority">
+            <option value="">— select —</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <div class="hint" id="priorityHint"></div>
+        </div>
+        <div class="field">
+          <label for="taskDate">Due Date</label>
+          <input id="taskDate" type="date"/>
+          <div class="hint" id="dateHint"></div>
+        </div>
+      </div>
+      <button type="submit">+ Add Task</button>
+    </form>
+  </div>
+
+  <div class="list-header">
+    <h2>Tasks</h2>
+    <span id="taskCount">0 tasks</span>
+  </div>
+
+  <div id="taskList"></div>
+  <div id="resizeBar">window: —</div>
+
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
